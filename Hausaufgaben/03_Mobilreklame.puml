@@ -1,0 +1,20 @@
+@startuml
+
+class Kunde {
+
+}
+class Kundenverwaltung {
+    - kunden: Kunde[]
+}
+class Werbekunde {
+
+}
+class Fahrzeugkunde {
+
+}
+
+Fahrzeugkunde --|> Kunde
+Kunde <|-- Werbekunde
+
+Kundenverwaltung --> Kunde : verwaltet *
+@enduml

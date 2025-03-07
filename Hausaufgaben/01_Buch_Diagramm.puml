@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+
+class Buch {
+    ' private Attribute
+    - titel: string
+    - autor: string
+    - seitenzahl: int
+
+    ' Öffentliche Methoden
+    + getTitel(): string
+    + getAutor(): string
+    + getSeitenZahl(): int
+    + setTitel(titel:string): void
+    + setAutor(autor:string): void
+    + setSeitenZahl(seitenZahl: int): void
+}
+
+object Buch1 {
+    titel = "Beispielbuch"
+    autor = "Mark Mustermann"
+    seitenZahl = 42
+}
+@enduml

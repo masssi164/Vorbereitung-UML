@@ -1,0 +1,22 @@
+@startuml
+class Buch {
+    - titel:string
+    - erscheinungsJahr: int
+}
+
+class Kapitel {
+}
+
+class Autor {
+}
+
+class Seite {
+}
+
+Buch *-- Kapitel: enthält
+Kapitel *-- Seite: "besteht aus"
+Kapitel "1,*" --> "*" Autor: "geschrieben von"
+
+
+
+@enduml
