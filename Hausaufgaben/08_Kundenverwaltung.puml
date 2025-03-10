@@ -1,0 +1,24 @@
+@startuml
+package "Kundenverwaltung" {
+    actor "Sachbearbeiter" as SB
+
+    rectangle "Kundenverwaltung" {
+        (Suche nach Kunden) as suchen
+        (Kundendaten anzeigen) as anzeigen
+        (Kundendaten ändern) as aendern
+        (Kundendatenanlegen) as anlegen
+        (Passwortabfrage) as authentifizieren
+    }
+
+    suchen ..> authentifizieren: <<include>>
+    anzeigen ..> authentifizieren: <<include>
+    aendern ..> authentifizieren: <<include>>
+    anlegen ..> authentifizieren
+
+    SB -- suchen
+    SB -- anzeigen
+    SB -- aendern
+    SB -- anlegen
+}
+@enduml
+

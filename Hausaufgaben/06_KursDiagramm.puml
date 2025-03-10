@@ -1,0 +1,23 @@
+@startuml
+
+class Kurs {
+
+}
+
+class Kursveranstaltung {
+
+}
+
+class KursVerwaltung {
+
+}
+
+class Datum {
+
+}
+
+Kursverwaltung "1" -- "1..*" Kursveranstaltung: "bucht"
+Kursveranstaltung "1" -- "1..*" Datum: "findet statt"
+Kursveranstaltung "1" *-- "1..*" Kurs: "beinhaltet"
+
+@enduml

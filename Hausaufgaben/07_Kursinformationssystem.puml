@@ -1,0 +1,34 @@
+@startuml
+left to right direction
+package "Kursverwaltung" {
+
+    actor "XYCert-Sachbearbeiter" as SB
+    actor "Interessent" as INT
+
+    rectangle "Kursinformationssystem" {
+        (Kurs neu anlegen) as neu
+        (Kurs löschen) as loeschen
+        (Kurs ändern) as aendern
+        (Kurs anzeigen) as anzeigen
+        (Kurs suchen) as suchen
+        (Kurs drucken) as drucken
+    }
+
+    ' Sachbearbeiter können alle Funktionen nutzen
+    SB -- neu
+    SB -- loeschen
+    SB -- aendern
+    SB -- anzeigen
+    SB -- suchen
+    SB -- drucken
+
+    ' Interessenten können nur bestimmte Funktionen nutzen
+    INT -- anzeigen
+    INT -- suchen
+    INT -- drucken
+
+
+}
+
+@enduml
+

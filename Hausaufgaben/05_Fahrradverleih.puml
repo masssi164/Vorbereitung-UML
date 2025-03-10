@@ -1,0 +1,32 @@
+@startuml
+left to right direction
+
+class Fahrrad {
+}
+
+class Kunde {
+    - nummer: int
+}
+
+class Mietvertrag {
+    - nummer: int
+}
+
+class Firma {
+    - name: string
+}
+
+class Mountainbike {
+}
+
+class Trekkingrad {
+}
+
+Fahrrad <|-- Mountainbike
+Fahrrad <|-- Trekkingrad
+
+Kunde "1" -- "1..*" Mietvertrag : "unterschreibt"
+Mietvertrag "1" -- "1..*" Fahrrad : "umfasst"
+Firma "1" -- "1..*" Mietvertrag : "verleiht"
+
+@enduml
